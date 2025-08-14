@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 
 // The @Controller annotation indicates that this class is a Spring MVC web controller
+//    Servlet is like a mini server
 @Controller
 public class ComedyController {
 
