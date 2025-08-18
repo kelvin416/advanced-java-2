@@ -11,8 +11,10 @@ import org.springframework.stereotype.Component;
 public class SpringDeveloper {
 
     private Address address;
+    private Identification identification;
 
-    public SpringDeveloper(Address address) {
+    public SpringDeveloper(Address address, Identification identification) {
         this.address = address;
+        this.identification = identification;
     }
 }

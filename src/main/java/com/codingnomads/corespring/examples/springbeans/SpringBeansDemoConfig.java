@@ -12,4 +12,9 @@ public class SpringBeansDemoConfig {
     public Address address() {
         return new Address("Main Street", 1500);
     }
+
+    @Bean
+    public Identification identification(){
+        return new Identification("Kelvin", "kelvin@gmail.com");
+    }
 }
