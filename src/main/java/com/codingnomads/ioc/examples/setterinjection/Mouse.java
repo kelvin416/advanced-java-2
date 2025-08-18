@@ -9,5 +9,5 @@ import lombok.ToString;
 @ToString
 public class Mouse {
 
-    private int sensitivityLevel;
+    private String sensitivityLevel;
 }
