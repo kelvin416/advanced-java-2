@@ -17,4 +17,8 @@ public class LaptopConfiguration {
     public OS os() {
         return new OS("ubuntu");
     }
+
+    @Bean Mouse mouse(){
+        return new Mouse("Track Ball");
+    }
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 public class Laptop {
     private Processor processor;
     private OS os;
+    private Mouse mouse;
 
     @Autowired
     public void setProcessor(Processor processor) {
@@ -17,6 +18,11 @@ public class Laptop {
     @Autowired
     public void setOs(OS os) {
         this.os = os;
+    }
+
+    @Autowired
+    public void setMouse(Mouse mouse){
+        this.mouse = mouse;
     }
 
     public String printLaptopConfiguration() {
