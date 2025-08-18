@@ -19,4 +19,9 @@
         <property name="version" value="17"/>
     </bean>
 
+    <bean id="monitor" class="com.codingnomads.corespring.examples.application_context.xml.Monitor">
+        <property name="name" value="Dell Monitor"/>
+        <property name="size" value="24inches"/>
+    </bean>
+
 </beans>
