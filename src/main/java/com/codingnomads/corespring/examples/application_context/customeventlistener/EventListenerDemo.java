@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @RequiredArgsConstructor
-public class EventListenerDemo implements CommandLineRunner {
+public class  EventListenerDemo implements CommandLineRunner {
 
     private final UserRegistrationCompletedEventPublisher userRegistrationCompletedEventPublisher;
 
