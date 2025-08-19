@@ -9,6 +9,7 @@ public class BeanLifeCycleDemo {
         ctx.register(BeanLifeCycleConfig.class);
         ctx.refresh();
         final SpringBean springBean = ctx.getBean(SpringBean.class);
+        final CarBean carBean = ctx.getBean(CarBean.class);
         ctx.close();
     }
 }
