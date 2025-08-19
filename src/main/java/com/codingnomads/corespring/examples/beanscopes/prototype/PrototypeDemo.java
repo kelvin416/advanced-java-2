@@ -15,6 +15,12 @@ public class PrototypeDemo {
         SpringBean springBean2 = ctx.getBean(SpringBean.class);
         System.out.println("Hash code: " + springBean2.hashCode());
 
+        PhoneBean phoneBean1 = ctx.getBean(PhoneBean.class);
+        System.out.println("Phone 1 IMEI: " + phoneBean1.hashCode());
+
+        PhoneBean phoneBean2 = ctx.getBean(PhoneBean.class);
+        System.out.println("Phone 2 IMEI: " + phoneBean2.hashCode());
+
         ctx.close();
     }
 }
