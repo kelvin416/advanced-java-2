@@ -14,6 +14,12 @@ public class DependsOnDemoConfig {
         return new SpringDeveloper();
     }
 
+    @Bean
+    @DependsOn(value = "jdk")
+    public CodingNomadsSupport codingNomadsSupport(){
+        return new CodingNomadsSupport();
+    }
+
     @Bean("jdk")
     public JDK jdk() {
         return new JDK();

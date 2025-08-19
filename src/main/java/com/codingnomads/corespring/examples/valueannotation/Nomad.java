@@ -36,6 +36,12 @@ public class Nomad {
     @Value("#{${database.values}}")
     private Map<String, String> databaseValues;
 
+    @Value("${nomad.keyBoard}")
+    private String keyBoard;
+
+    @Value("${nomad.screen}")
+    private String screen;
+
     public String nomadIdentity() {
         return name.concat(" ").concat(age.toString());
     }
@@ -50,7 +56,12 @@ public class Nomad {
                 .concat(" , ")
                 .concat(framework)
                 .concat(" and ")
-                .concat(ide);
+                .concat(ide)
+                .concat(" He has a ")
+                .concat(keyBoard)
+                .concat(" keyboard and ")
+                .concat(screen)
+                .concat(" screen.");
     }
 
     public List<String> getWorkingDays() {

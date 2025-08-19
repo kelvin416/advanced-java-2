@@ -19,4 +19,14 @@ public class SampleBean {
     public void cleanup() {
         System.out.println("time to @PreDestroy and head home..");
     }
+
+    @PostConstruct
+    public void funny(){
+        System.out.println("The joke was funny enough.");
+    }
+
+    @PreDestroy
+    public void lame(){
+        System.out.println("The joke was lame, headed home!!!");
+    }
 }
