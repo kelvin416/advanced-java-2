@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="javaDev" class="com.codingnomads.corespring.lab.JavaDev">
+        <property name="name" value="Kelvin"/>
+        <property name="language" value="Java"/>
+        <property name="email" value="kelvin@gmail"/>
+    </bean>
+
+    <bean id="pythonDev" class="com.codingnomads.corespring.lab.JavaDev">
+        <property name="name" value="John"/>
+        <property name="language" value="Python"/>
+        <property name="email" value="johndoe@email.com"/>
+    </bean>
+</beans>
