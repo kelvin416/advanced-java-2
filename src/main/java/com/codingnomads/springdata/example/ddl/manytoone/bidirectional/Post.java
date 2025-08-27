@@ -24,4 +24,7 @@ public class Post {
     // this annotation references the configuration on the post field in the Comment class
     @OneToMany(mappedBy = "post")
     private Set<Comment> comments;
+
+    @ManyToOne
+    private User user;
 }

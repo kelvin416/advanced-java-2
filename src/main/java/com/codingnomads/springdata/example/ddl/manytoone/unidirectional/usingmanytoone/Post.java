@@ -3,6 +3,7 @@ package com.codingnomads.springdata.example.ddl.manytoone.unidirectional.usingma
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.security.core.parameters.P;
 
 @Entity
 @Getter
@@ -19,4 +20,7 @@ public class Post {
 
     @Column(nullable = false)
     private String content;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private User user;
 }
