@@ -27,4 +27,7 @@ public class Car {
             // to the field in the Driver class that defines the relationship
             mappedBy = "car")
     private Driver driver;
+
+    @OneToOne(mappedBy = "car")
+    private Engine engine;
 }
