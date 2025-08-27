@@ -41,11 +41,26 @@ public class SpringDataJDBCDemo implements CommandLineRunner {
                     "VALUES ('%s','%s','%s')", name[0], name[1], name[2]));
         }
 
+//        Query on customers out of the database
+        Customer customers = jdbcTemplate.query("SELECT id, first_name, last_name, email " +
+                "FROM customers WHERE last_name = 'Doe'",
+                (result, row) -> new Customer(result.getLong("id"),
+                        result.getString("first_name"),
+                        result.getString("last_name"),
+                        result.getString("email"))).get(0);
+        System.out.println(customers.toString());
+
+//        Select multiple customers from the database
         jdbcTemplate.query("SELECT id, first_name, last_name, email" +
-                " FROM customers WHERE first_name = 'kelvin'",
+                " FROM customers",
                 (rs, rowNum) -> new Customer(rs.getLong("id"), rs.getString("first_name"),
                         rs.getString("last_name"), rs.getString("email")))
                 .forEach(customer -> System.out.println(customer.toString()));
+
+        //Query the database to get the first_name of the customer with id = 2
+        String name = jdbcTemplate.queryForObject("SELECT first_name FROM customers " +
+                "WHERE id = 2", String.class);
+        System.out.println("Name is: " + name);
 
 //        try {
 //            // create employee table using the JdbcTemplate method "execute"
