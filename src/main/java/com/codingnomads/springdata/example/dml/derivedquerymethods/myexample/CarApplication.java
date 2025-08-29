@@ -97,6 +97,15 @@ public class CarApplication implements CommandLineRunner {
         car1.forEach(System.out::println);
 
 
+        System.out.println("\n**********findByPriceGreaterThan***********");
+        Car car2 = carRepo.findFirstByPriceGreaterThan(40000);
+        System.out.println(car2.toString());
+
+        System.out.println("\n********findByNameStartingWith***********");
+        List<Car> car3 = carRepo.findByNameStartingWith("b");
+        car3.forEach(System.out::println);
+
+        carRepo.deleteAll();
 
 
     }
