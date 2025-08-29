@@ -35,24 +35,24 @@ public class CarApplication implements CommandLineRunner {
                 .build();
 
         Car benz = Car.builder().name("benz").price(89000).euroRated(true).engine(bmwEngine).numberOfDaysTillPurchase(22).build();
-        Car x5 = Car.builder()
-                .name("x5")
-                .price(75000)
-                .euroRated(true)
-                .engine(bmwEngine)
-                .numberOfDaysTillPurchase(5)
-                .build();
+//        Car x5 = Car.builder()
+//                .name("x5")
+//                .price(75000)
+//                .euroRated(true)
+//                .engine(bmwEngine)
+//                .numberOfDaysTillPurchase(5)
+//                .build();
         Car crv = Car.builder()
                 .name("crv")
                 .price(33000)
-                .euroRated(false)
+                .euroRated(true)
                 .engine(hondaEngine)
                 .numberOfDaysTillPurchase(20)
                 .build();
         Car mustang = Car.builder()
                 .name("mustang")
                 .price(55000)
-                .euroRated(false)
+                .euroRated(true)
                 .engine(fordEngine)
                 .numberOfDaysTillPurchase(30)
                 .build();
@@ -64,37 +64,39 @@ public class CarApplication implements CommandLineRunner {
                 .engine(toyotaEngine)
                 .numberOfDaysTillPurchase(8)
                 .build();
-
-        Car accord = Car.builder()
-                .name("accord")
-                .price(29000)
-                .euroRated(false)
-                .engine(hondaEngine)
-                .numberOfDaysTillPurchase(12)
-                .build();
-
-        Car series3 = Car.builder()
-                .name("3series")
-                .price(41000)
-                .euroRated(true)
-                .engine(bmwEngine)
-                .numberOfDaysTillPurchase(10)
-                .build();
+//
+//        Car accord = Car.builder()
+//                .name("accord")
+//                .price(29000)
+//                .euroRated(false)
+//                .engine(hondaEngine)
+//                .numberOfDaysTillPurchase(12)
+//                .build();
+//
+//        Car series3 = Car.builder()
+//                .name("3series")
+//                .price(41000)
+//                .euroRated(true)
+//                .engine(bmwEngine)
+//                .numberOfDaysTillPurchase(10)
+//                .build();
 
 //        Using save all method
 //        carRepo.saveAll(List.of(benz, x5, crv, mustang, prius, accord, series3));
 
         carRepo.save(benz);
-        carRepo.save(x5);
+//        carRepo.save(x5);
         carRepo.save(crv);
         carRepo.save(mustang);
         carRepo.save(prius);
-        carRepo.save(accord);
-        carRepo.save(series3);
+//        carRepo.save(accord);
+//        carRepo.save(series3);
 
-//        System.out.println("\n**********findByName**********");
-//        List<Car> car1 = carRepo.findByName("benz");
-//        car1.forEach(System.out::println);
+        System.out.println("\n**********findByName**********");
+        List<Car> car1 = carRepo.findByName("benz");
+        car1.forEach(System.out::println);
+
+
 
 
     }
