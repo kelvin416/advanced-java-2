@@ -20,4 +20,20 @@ public class PrintEntity {
 
     // write your methods here
 
+    private void welcomeToCodingNomads(){
+        System.out.println("Welcome, please register here:");
+    }
+
+    private void registration(){
+        System.out.println("Register your first name and last name:");
+    }
+
+    private void courseSelection(){
+        System.out.println("Select the subjects that you would wish to take:");
+    }
+
+    private void completionDate(){
+        System.out.println("Date of completion has been set to six months.");
+    }
+
 }
