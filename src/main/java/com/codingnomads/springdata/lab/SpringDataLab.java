@@ -27,6 +27,11 @@ public class SpringDataLab implements CommandLineRunner {
                 Area.builder().code("G").build(),
                 Area.builder().code("H").build(),
                 Area.builder().code("Y").build(),
-                Area.builder().code("Z").build()));
+                Area.builder().code("Z").build(),
+                Area.builder().code("K").build(),
+                Area.builder().code("E").build(),
+                Area.builder().code("B").build(),
+                Area.builder().code("N").build()
+                ));
     }
 }
