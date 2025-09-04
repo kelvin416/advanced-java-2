@@ -14,12 +14,19 @@ public interface SongMapper {
 
     @Select("SELECT * " + "FROM mybatis.songs " + "WHERE id = #{param1};")
     Song getSongById(Long id);
+    @Select("SELECT * FROM mybatis.songs WHERE album_name = #{param1};")
+    List<Song> getSongsByAlbumName(String albumName);
+
+
+    @Select("SELECT * FROM mybatis.songs WHERE artist_name = #{param1} " +
+            "AND song_length = #{param2};")
+    List<Song> getSongsByArtistNameAndLengthLessThan(String artistName, int songLength);
 
     @Select("SELECT * " + "FROM mybatis.songs " + "WHERE name = #{param1};")
     List<Song> getSongsByName(String name);
 
     @Select("SELECT * " + "FROM mybatis.songs " + "WHERE song_length > #{param1}")
-    List<Song> getSongsWithLengthGreaterThan(int song_length);
+    List<Song> getSongsWithLengthGreaterThan(int songLength);
 
     @Select("SELECT * " + "FROM mybatis.songs " + "WHERE artist_name = #{param1} AND album_name = #{param2};")
     List<Song> getSongsByAlbumAndArtist(String artistName, String albumName);
