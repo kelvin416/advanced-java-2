@@ -29,6 +29,11 @@ public class GetForObjectDemo {
 
             // submit more requests here
 
+            ExcuserApi[] randomExcuse;
+            randomExcuse = restTemplate.getForObject("https://excuser-three.vercel.app/v1/excuse",
+                    ExcuserApi[].class);
+            System.out.println(Arrays.toString(randomExcuse));
+
             //        CodingNomadsTasksApiResponse response =
             //                restTemplate.getForObject("http://demo.codingnomads.co:8080/tasks_api/users/5",
             //                        CodingNomadsTasksApiResponse.class);

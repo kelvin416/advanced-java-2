@@ -34,6 +34,16 @@ public class GetForEntityDemo {
             } else {
                 System.out.println("Something went wrong! The response was not marked with status code 200");
             }
+
+            ResponseEntity<ExcuserApi2[]> responseEntity1 =
+                    restTemplate.getForEntity("https://excuser-three.vercel.app/v1/excuse", ExcuserApi2[].class);
+
+            if (responseEntity1.getStatusCode().equals(HttpStatus.OK) && responseEntity1.getBody() != null){
+                ExcuserApi2[] excuserApi2 = responseEntity1.getBody();
+                System.out.println(Arrays.toString(excuserApi2));
+            } else {
+                System.out.println("Something wen wrong!");
+            }
         };
     }
 }
