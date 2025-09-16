@@ -47,13 +47,13 @@ public class ResponseController {
     public ResponseEntity<Task> constructorTask() {
         HttpHeaders headers = new HttpHeaders();
         headers.add("TEST", "TEST HEADER");
-        headers.add("Location", "/tasks/" + task.getId());
-        return new ResponseEntity<>(task, headers, HttpStatus.CREATED);
+        headers.add("URL", "/tasks/" + task.getId());
+        return new ResponseEntity<>(task, headers, HttpStatus.I_AM_A_TEAPOT);
     }
 
     @RequestMapping("/tasks/builder")
     public ResponseEntity<Task> buildTask(){
-        return ResponseEntity.created(URI.create("/tasks_builder" + task2.getId()))
+        return ResponseEntity.created(URI.create("/tasks/" + task2.getId()))
                 .header("TEST", "TEST HEADER")
                 .body(task2);
     }
