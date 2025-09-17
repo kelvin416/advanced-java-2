@@ -5,6 +5,8 @@ import com.codingnomads.springweb.gettingdatafromclient.requestparam.models.Task
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
+import com.codingnomads.springweb.gettingdatafromclient.requestparam.models.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -42,5 +44,10 @@ public class TaskController {
         return IntStream.range(0, names.size())
                 .mapToObj(i -> Task.builder().id((long) i).name(names.get(i)).build())
                 .collect(Collectors.toList());
+    }
+
+    @GetMapping(value = "/user-mapping", produces = MediaType.APPLICATION_JSON_VALUE)
+    public User getUserByName(@RequestParam(name = "name") String userName, @RequestParam(name = "id", required = false, defaultValue = "33")Long userId){
+        return User.builder().id(userId).name(userName).email(userName + "@gmail.com").build();
     }
 }
