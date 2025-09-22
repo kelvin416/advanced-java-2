@@ -17,6 +17,9 @@ public class HomeController {
         model.addAttribute("name", "Developer");
         model.addAttribute("language", "Java");
         model.addAttribute("framework", "Spring");
+        model.addAttribute("ide", "ItelliJ IDEA");
+        model.addAttribute("uefa", "Champions League");
+        model.addAttribute("python", "Django");
         return "model-page";
     }
 
